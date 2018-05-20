@@ -1,27 +1,31 @@
 $(document).ready(() => {
-    // setTimeout(() => {
-    //     $(".load-cover").fadeOut();
-    // }, 2000)
-
+    let inTransition = false;
     $('.load-cover').fadeOut();
-    $('#home-btn').click((event) => {
+    
+    $('.nav-panel').on('click', 'a', (event) => {
         event.preventDefault();
-        console.log('you pushed the button')
-        $('.home-page').toggleClass('left-screen')
-        setTimeout(() => {
-                $(".load-cover").fadeIn();
-            }, 2000)
+        let pages = [ 'home', 'about', 'portfolio', 'contact' ]
+        if(!inTransition) {
+            inTransition = true;
+            pages.forEach((page) => {
+                if(page !== `${event.target.id.split('-')[0]}`) {
+                    $(`.${page}-page`).removeClass('front').addClass('back');
+                    $(`#${page}-btn`).removeClass('slided-right');
+                }
+            });
+            if($(`.${event.target.id.split('-')[0]}-page`).hasClass('left-screen')) {
+                $(`.${event.target.id.split('-')[0]}-page`).removeClass('left-screen back').addClass('front');
+                $(`#${event.target.id.split('-')[0]}-btn`).addClass('slided-right');
+    
+            }
+            setTimeout(() => {
+                pages.forEach((page) => {
+                    if(page !== `${event.target.id.split('-')[0]}`) {
+                        $(`.${page}-page`).addClass('left-screen');
+                    }
+                });
+            }, 2000);
+            setTimeout(() => inTransition = false, 4000)
+        }
     });
-    $('#about-btn').click((event) => {
-        event.preventDefault();
-        console.log('you pushed the button')
-    })
-    $('#portfolio-btn').click((event) => {
-        event.preventDefault();
-        console.log('you pushed the button')
-    })
-    $('#contact-btn').click((event) => {
-        event.preventDefault();
-        console.log('you pushed the button')
-    })
 });

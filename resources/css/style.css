@@ -17,11 +17,13 @@
     font-size: .85rem;
     margin: 10px;
     text-align: center;
+    font-style: italic;
 }
 
 .motto span {
     font-size: .65rem;
     margin-left: auto;
+    font-style: normal;
 }
 
 .nav-panel {
@@ -33,7 +35,26 @@
 }
 
 .nav-panel a {
-    margin: 10px 0px 10px 25px;
+    width: 10vw;
+    padding: 9px 0px 9px 10px;
+    margin: 1px 0px 1px 25px;
+    background-color:rgba(0, 0, 0, .8);
+    color: white;
+    transition-duration: .2s;
+    border-radius: 1px;
+    text-decoration: none;
+}
+
+.nav-panel a:first-child {
+    border-top-right-radius: 10px;
+}
+
+.nav-panel a:last-child {
+    border-bottom-right-radius: 10px;
+}
+
+.nav-panel a:hover, .slided-right {
+    margin-left: 35px !important;
 }
 
 .side-bar p {
@@ -41,16 +62,39 @@
     margin: 10px
 }
 
-.home-page {
+.home-page, .about-page, .portfolio-page, .contact-page {
     width: 100vw;
     height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition-duration: 2s;
+}
+
+.home-page {
     background-image: url(https://images.unsplash.com/photo-1503934397939-f303392d5f30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c354af38363ce80e6aae51182b23514&auto=format&fit=crop&w=2586&q=80);
     background-position: center;
     background-size: cover;
-    position: relative;
-    transition-duration: 2s;
+}
+
+.about-page {
+    background-image: url(https://images.unsplash.com/photo-1495571344521-cec5d366af78?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=efe80f37f8e3929b7d1bff65e250c521&auto=format&fit=crop&w=2689&q=80);
+    background-position: center;
+    background-size: cover;
+}
+
+.portfolio-page, .contact-page {
+    background: linear-gradient(to right, rgb(32,25,25), rgb(19,108,175));
 }
 
 .left-screen {
     width: 0;
+}
+
+.back {
+    z-index: 5;
+}
+
+.front {
+    z-index: 20;
 }
