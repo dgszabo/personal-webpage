@@ -4,8 +4,8 @@ $(document).ready(() => {
     
     $('.nav-panel').on('click', 'a', (event) => {
         event.preventDefault();
-        let pages = [ 'home', 'about', 'portfolio', 'contact' ]
-        if(!inTransition) {
+        let pages = [ 'home', 'about', 'portfolio', 'resume', 'contact' ]
+        if(!inTransition && $(`.${event.target.id.split('-')[0]}-page`).hasClass('left-screen')) {
             inTransition = true;
             pages.forEach((page) => {
                 if(page !== `${event.target.id.split('-')[0]}`) {
@@ -13,19 +13,18 @@ $(document).ready(() => {
                     $(`#${page}-btn`).removeClass('slided-right');
                 }
             });
-            if($(`.${event.target.id.split('-')[0]}-page`).hasClass('left-screen')) {
-                $(`.${event.target.id.split('-')[0]}-page`).removeClass('left-screen back').addClass('front');
-                $(`#${event.target.id.split('-')[0]}-btn`).addClass('slided-right');
-    
-            }
+
+            $(`.${event.target.id.split('-')[0]}-page`).removeClass('left-screen back').addClass('front');
+            $(`#${event.target.id.split('-')[0]}-btn`).addClass('slided-right');
+
             setTimeout(() => {
                 pages.forEach((page) => {
                     if(page !== `${event.target.id.split('-')[0]}`) {
                         $(`.${page}-page`).addClass('left-screen');
                     }
+                    inTransition = false;
                 });
             }, 2000);
-            setTimeout(() => inTransition = false, 4000)
         }
     });
 });

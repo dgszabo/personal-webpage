@@ -1,3 +1,8 @@
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* side bar elements */
 .side-bar {
     position: fixed;
     top: 0;
@@ -17,7 +22,7 @@
     font-size: .85rem;
     margin: 10px;
     text-align: center;
-    font-style: italic;
+    font-family: 'Kavivanar', cursive;
 }
 
 .motto span {
@@ -36,6 +41,7 @@
 
 .nav-panel a {
     width: 10vw;
+    min-width: 120px;
     padding: 9px 0px 9px 10px;
     margin: 1px 0px 1px 25px;
     background-color:rgba(0, 0, 0, .8);
@@ -62,33 +68,41 @@
     margin: 10px
 }
 
-.home-page, .about-page, .portfolio-page, .contact-page {
+/* page backgrounds and common styling rules, elements for the swiping logic */
+.home-page, .about-page, .portfolio-page, .resume-page, .contact-page {
     width: 100vw;
     height: 100vh;
     position: absolute;
     top: 0;
     left: 0;
+    background-position: center;
+    background-size: cover;
     transition-duration: 2s;
 }
 
 .home-page {
     background-image: url(https://images.unsplash.com/photo-1503934397939-f303392d5f30?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=8c354af38363ce80e6aae51182b23514&auto=format&fit=crop&w=2586&q=80);
-    background-position: center;
-    background-size: cover;
 }
 
 .about-page {
     background-image: url(https://images.unsplash.com/photo-1495571344521-cec5d366af78?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=efe80f37f8e3929b7d1bff65e250c521&auto=format&fit=crop&w=2689&q=80);
-    background-position: center;
-    background-size: cover;
 }
 
-.portfolio-page, .contact-page {
-    background: linear-gradient(to right, rgb(32,25,25), rgb(19,108,175));
+.portfolio-page {
+    background-image: url(https://images.unsplash.com/photo-1494256463612-66a664fd17e8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b87db51916b53cc04220ffc5f7da41e&auto=format&fit=crop&w=2550&q=80);
+}
+
+.resume-page {
+    background-image: url(https://images.unsplash.com/photo-1435224654926-ecc9f7fa028c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=530fa1b183b1514b70448e62ad142c8e&auto=format&fit=crop&w=2468&q=80);
+}
+
+.contact-page {
+    background-image: url(https://images.unsplash.com/uploads/1413222992504f1b734a6/1928e537?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=ae29adbe918cb18e89f9c06a97c0c878&auto=format&fit=crop&w=2550&q=80);
 }
 
 .left-screen {
     width: 0;
+    transition-duration: 0s;
 }
 
 .back {
@@ -98,3 +112,27 @@
 .front {
     z-index: 20;
 }
+
+/* home page specific styling rules */
+.name-tag {
+    text-align: center;
+    position: relative;
+    top: 62%;
+    color: white;
+}
+
+.name-tag h6 {
+    font-size: 1.3em;
+}
+
+.name-tag h1 {
+    font-family: 'Kavivanar', cursive;
+    font-size: 3em;
+    margin: 2% 0 1% 0;
+}
+
+.name-tag h5 {
+    font-size: 1.5em;
+}
+
+/* about page specific styling rules */
