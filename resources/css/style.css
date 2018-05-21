@@ -77,7 +77,7 @@ body {
     left: 0;
     background-position: center;
     background-size: cover;
-    transition-duration: 1.5s;
+    transition-duration: 1s;
 }
 
 .home-page {
@@ -89,7 +89,8 @@ body {
 }
 
 .portfolio-page {
-    background-image: url(https://images.unsplash.com/photo-1494256463612-66a664fd17e8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9b87db51916b53cc04220ffc5f7da41e&auto=format&fit=crop&w=2550&q=80);
+    height: 120%;
+    background-color: rgb(155, 155, 119);
 }
 
 .resume-page {
@@ -111,6 +112,14 @@ body {
 
 .front {
     z-index: 20;
+}
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
 }
 
 /* home page specific styling rules */
@@ -148,6 +157,7 @@ body {
     align-items: center;
     background-color: rgba(255, 255, 255, .3);
     border-radius: 20px;
+    font-size: 1.4em;
 }
 
 .about-div h5 {
@@ -160,6 +170,81 @@ body {
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
 }
+
+/* portfolio page specific styling rules */
+.portfolio-div {
+    text-align: left;
+    position: relative;
+    top: 10%;
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    margin-left: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.portfolio-div a {
+    color: black;
+    text-decoration: none;
+}
+
+.portfolio-container {
+    width: 100%;
+    position: relative;
+    background-color: rgba(255, 255, 255, .3);
+    border-radius: 20px;
+    margin-top: 15px;
+}
+
+.portfolio-title {
+    position: relative;
+    width: 20%;
+    top: -11px;
+    left: 40%;
+    background-color: rgba(0, 0, 0, .8);
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    border-radius: 2px;
+}
+
+.portfolio-element {
+    width: 95%;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+}
+
+.portfolio-element a {
+    width: 40%;
+}
+
+.portfolio-element a img {
+    width: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+.portfolio-element div {
+    width: 60%;
+    margin: 0 20px 0 20px;
+    font-size: 1.4em;
+}
+
+.portfolio-element ul {
+    list-style: none;
+    font-size: .85em;
+    margin: 10px;
+}
+
+.portfolio-element li {
+    margin-top: 10px;
+}
+
+
 
 /* resume page specific styling rules */
 .resume-div {

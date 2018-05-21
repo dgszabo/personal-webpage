@@ -14,17 +14,20 @@ $(document).ready(() => {
                 }
             });
 
-            $(`.${event.target.id.split('-')[0]}-page`).removeClass('left-screen back').addClass('front');
-            $(`#${event.target.id.split('-')[0]}-btn`).addClass('slided-right');
+            $(`.${event.target.id.split('-')[0]}-page`).removeClass('hidden').addClass('visible');
+            setTimeout(() => {
+                $(`.${event.target.id.split('-')[0]}-page`).removeClass('left-screen back').addClass('front');
+                $(`#${event.target.id.split('-')[0]}-btn`).addClass('slided-right');
+            }, 20);
 
             setTimeout(() => {
                 pages.forEach((page) => {
                     if(page !== `${event.target.id.split('-')[0]}`) {
-                        $(`.${page}-page`).addClass('left-screen');
+                        $(`.${page}-page`).addClass('left-screen hidden');
                     }
                     inTransition = false;
                 });
-            }, 1500);
+            }, 1020);
         }
     });
 });
